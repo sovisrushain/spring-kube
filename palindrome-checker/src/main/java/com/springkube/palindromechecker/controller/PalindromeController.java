@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/check")
 public class PalindromeController {
@@ -25,7 +26,7 @@ public class PalindromeController {
 
     @GetMapping(value = "/{string}")
     public ResponseEntity<String> checkStatus(@PathVariable String string) {
-        logger.info("value: {}", string);
+        logger.info("PalindromeController => value: {} received!", string);
         String data = palindromeService.checkPalindrome(string);
         return ResponseEntity.ok(data);
     }
