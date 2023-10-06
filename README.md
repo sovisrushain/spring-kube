@@ -6,3 +6,4 @@ This project demonstrates the seamless integration of a Spring Boot web applicat
 
 1. Remove default logging coming from starter-web dependency
 2. Add Log4J
+3. Logging Configuration with RollingFile
