@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage("Clean Directory") {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage("Clone Repo") {
+            steps {
+                sh "git clone https://github.com/sovisrushain/spring-kube.git"
+            }
+        }
+
+        stage("Build Project") {
+            steps {
+                dir("spring-kube") {
+                    dir("palindrome-checker") {
+                        sh "mvn clean install"
+                    }
+                }
+            }
+        }
+    }
+}
